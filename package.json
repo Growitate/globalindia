@@ -14,7 +14,7 @@
     "db:migrate": "drizzle-kit migrate",
     "dev:static": "vite --host 0.0.0.0 --port ${PORT:-7853} --strictPort",
     "build:static": "vite build",
-    "package:apache": "vite build && cd dist/public && zip -r ../../globalindia-apache-deploy.zip .htaccess * -x '*.gitkeep*' && cp ../../globalindia-apache-deploy.zip ../../globalind.zip"
+    "package:apache": "vite build && rm -f globalindia-apache-deploy.zip globalind.zip && cd dist/public && zip -r -9 ../../globalindia-apache-deploy.zip .htaccess * -x '*.gitkeep*' && cp ../../globalindia-apache-deploy.zip ../../globalind.zip"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.693.0",
